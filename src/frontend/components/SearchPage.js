@@ -10,7 +10,7 @@ class SearchPage extends Component {
             <div id='searchPage'>
             <Column flexGrow={1}>
               <Row horizontal="center" id="title">
-                <h1 id="search_header"> | VidSearch |</h1>
+                <h1 id="search_header" onClick={() => this.props.handleClick()}> | VidSearch |</h1>
               </Row>
               <br /><br />
               <Row horizontal="center" id="content_row">
