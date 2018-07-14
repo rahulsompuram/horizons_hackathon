@@ -54,12 +54,14 @@
 #search_column {
   display: flex;
   padding: 20px;
-  border-left: 5px solid#1e3799;
-  background-color: #bfbfbf;
+  border: 1px solid#1e3799;
+  background: #0f2027; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #0f2027, #203a43, #1e3799); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #0f2027, #203a43, #1e3799);
 }
 
 #search_input {
-  width: 500px;
+  width: 100%;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
@@ -69,4 +71,12 @@
   height: 100%;
   background-color: #e6e6e6;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#timestampCards {
+  height: 50px;
+}
+
+#inverted_segment {
+  border: 1px solid white;
 }

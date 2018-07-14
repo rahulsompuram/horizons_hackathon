@@ -17,7 +17,7 @@ class HomePage extends Component {
               {/* <input type="search" id="url_input" placeholder="Enter a search phrase..." /> */}
               <Form>
                 <Form.Field>
-                  <input placeholder='Enter url' id = 'search_bar'/>
+                  <input placeholder='Enter url' id = 'search_bar' onKeyDown={(e) => e.keyCode === 13 ? this.props.handleClick() : null}/>
                 </Form.Field>
               </Form>
             </Row>
