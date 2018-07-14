@@ -1,0 +1,50 @@
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro");
+@import url("https://fonts.googleapis.com/css?family=Amaranth");
+
+#home_header {
+  font-family: 'Amaranth', sans-serif;
+  font-size: 96px;
+  color: #1e3799;
+}
+
+#url_input {
+  width: 550px;
+  height: 45px;
+}
+
+#title {
+  background-color: #1e3799;
+}
+
+#search_header {
+  font-family: 'Amaranth', sans-serif;
+  font-size: 48px;
+  color: white;
+}
+
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+#content_row {
+  padding-left: 100px;
+  padding-right: 100px;
+}
+
+#search_column {
+  display: flex;
+  padding: 20px;
+  border-left: 5px solid#1e3799;
+  background-color: #bfbfbf;
+}
+
+#search_input {
+  width: 100%;
+}
+
+#results_box {
+  border-left: 5px solid#1e3799;
+  padding: 5px;
+  height: 100%;
+  background-color: #e6e6e6;
+}

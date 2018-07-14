@@ -1,0 +1,27 @@
+{
+  "name": "horizons_hackathon",
+  "version": "0.1.0",
+  "private": true,
+  "proxy": "http://localhost:1337",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
+    "react-scripts": "1.1.4",
+    "redux": "^4.0.0",
+    "simple-flexbox": "^1.2.0",
+    "video-react": "^0.13.0"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "server": "nodemon server.js",
+    "dev": "npm run server | react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.2"
+  }
+}
