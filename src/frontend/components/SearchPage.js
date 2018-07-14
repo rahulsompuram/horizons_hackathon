@@ -1,9 +1,8 @@
 import React, {Component} from 'react';
 import Video from './Video.js';
 import { Column, Row } from 'simple-flexbox';
-import { Search } from 'semantic-ui-react'
-import longAudio from '../../backend/CloudApi/longAudio';
-import { Search, Form } from 'semantic-ui-react'
+import longAudio from '../../backend/CloudApi/longaudio';
+import { Search, Form } from 'semantic-ui-react';
 
 
 class SearchPage extends Component {
@@ -17,11 +16,14 @@ class SearchPage extends Component {
 
     }
 
-    async loadData() {
-      var obj = await longAudio();
-      this.setState({
-        startTimeArr: obj.startTimeArr,
-        wordArr: obj.wordArr,
+    componentDidMount () {
+      fetch ('http://localhost:3000/words')
+      .then((response) => response.json())
+      .then((json) => {
+        this.setState({
+          startTimeArr: json.startTimeArr,
+          wordArr: json.wordArr,
+        })
       })
     }
 

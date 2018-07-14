@@ -1,6 +1,7 @@
 import React from 'react';
 import "video-react/dist/video-react.css";
 import { Player, BigPlayButton, seek } from 'video-react';
+import obamaMom from './obamaMom.mp4'
 
 class Video extends React.Component {
     constructor(props) {
@@ -25,8 +26,7 @@ class Video extends React.Component {
             <Player
               ref='player'
               playsInline
-              poster="/assets/poster.png"
-              src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4"
+              src={obamaMom}
               id = "video"
             >
               <BigPlayButton position='center' />
