@@ -85,3 +85,8 @@
   font-weight: bold;
   font-size: 20px;
 }
+
+#extend {
+  display: flex;
+  justify-content: center;
+}

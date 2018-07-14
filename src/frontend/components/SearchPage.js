@@ -7,6 +7,7 @@ import { Search, Form } from 'semantic-ui-react'
 class SearchPage extends Component {
     state = {
       searchKey: '',
+      seekTime: null,
       searchStrings: [],
       searchResults: [], //array of indices of the search results
       wordArr: [ 'my',
@@ -204,7 +205,9 @@ class SearchPage extends Component {
           if(word.toLowerCase().indexOf(searchArr[0].toLowerCase()) > -1){
             count++
             string = word;
-            beforeStr = this.state.wordArr[j-2] + " " + this.state.wordArr[j-1] + " ";
+            if(j-1>0){
+              beforeStr = this.state.wordArr[j-2] + " " + this.state.wordArr[j-1] + " ";
+            }
             for(var i = 1; i < searchArr.length; i++){
               if(this.state.wordArr[j+i].toLowerCase().indexOf(searchArr[i].toLowerCase()) > -1){
                 count ++
@@ -217,7 +220,7 @@ class SearchPage extends Component {
         })
       } else {
         this.state.wordArr.forEach((word, i) => {
-          var beforeStr = this.state.wordArr[i-2] + " " + this.state.wordArr[i-1] + " ";
+          var beforeStr =  i - 1 > 0 ? this.state.wordArr[i-2] + " " + this.state.wordArr[i-1] + " " : null;
           var afterStr = " " + this.state.wordArr[i+1] + " " + this.state.wordArr[i+2];
           var index = word.toLowerCase().indexOf(this.state.searchKey.toLowerCase());
           return index > -1 ? (searchResults.push(i), searchStrings.push([word, beforeStr, afterStr])) : null
@@ -233,8 +236,18 @@ class SearchPage extends Component {
     handleSearchChange = (e) => {
       this.setState({
         searchKey: e.target.value,
-        searchResults: []
+        searchResults: [],
+        seekTime: null,
       });
+
+    };
+
+    setSeekTime(time) {
+      this.setState({seekTime: time});
+    }
+
+    clearSeekTime() {
+      this.setState({seekTime: null});
     }
 
     render() {
@@ -248,10 +261,11 @@ class SearchPage extends Component {
               <br /><br />
               <Row horizontal="center" id="content_row">
                 <Column flexGrow={5} id="video_column">
-                  <Video />
+                  <Video seekTime={this.state.seekTime} clearSeekTime={() => this.clearSeekTime()}/>
                 </Column>
                 <Column flexGrow={0.1} />
                 <Column flexGrow={1} id="search_column">
+                  <Row id='extend'>
                   <Form>
                     <Form.Field>
                       <input placeholder='Enter a word/phrase to search...' id = 'search_bar' value={this.state.searchKey}
@@ -260,16 +274,9 @@ class SearchPage extends Component {
                       />
                     </Form.Field>
                   </Form>
-                  {/* <Row horizontal="start" id="search_box"> */}
-                    {/* <Search id='search_input'
-                      // loading={isLoading}
-                      // onResultSelect={this.handleResultSelect}
-                      // onSearchChange={_.debounce(this.handleSearchChange, 500, { leading: true })}
-                      // results={results}
-                      value={this.state.searchKey}
-                      // {...this.props}
-                    /> */}
-                  {/* </Row> */}
+                </Row>
+
+
                     <div class="ui inverted segment" id='inverted_segment'>
                       <Row vertical='center' id='results_header'>
                       <Column flexGrow={1} id='results_header_1' horizontal='start'>
@@ -283,7 +290,7 @@ class SearchPage extends Component {
                     <div class="ui inverted relaxed divided list" id='inverted_list'>
                       {this.state.searchResults.map((index, i) =>
                         (<div>
-                        <Row vertical="center" id="timestampCards">
+                        <Row onClick={() => this.setSeekTime(this.state.startTimeArr[index])} vertical="center" id="timestampCards">
                             <Column flexGrow={1} horizontal='start' class="timestamp">{this.state.startTimeArr[index]}</Column>
                             <Column flexGrow={1} horizontal='end' class="phrase">{this.state.searchStrings[i][1]}<b>{this.state.searchStrings[i][0]}</b>{this.state.searchStrings[i][2]}</Column>
                         </Row>
