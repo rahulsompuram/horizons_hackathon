@@ -24,7 +24,7 @@ app.get('/words', function (req, res) {
   // Creates a client
   const client = new speech.SpeechClient();
 
-  const gcsUri = 'gs://pfaulkneraudio/obamaMomM.flac';
+  const gcsUri = 'gs://pfaulkneraudio/demiAudiomono.flac';
   const encoding = 'FLAC';
   //const sampleRateHertz = 44100;
   const languageCode = 'en-US';
@@ -81,7 +81,7 @@ app.get('/words', function (req, res) {
         wordArr.push(words[i][j].word);
       }
     }
-
+    console.log('Done transcribing!')
     res.json({
       startTimeArr: startTimeArr,
       wordArr: wordArr,

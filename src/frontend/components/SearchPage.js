@@ -127,7 +127,7 @@ class SearchPage extends Component {
                       {this.state.searchResults.map((index, i) =>
                         (<div>
                         <Row onClick={() => this.setSeekTime(this.state.startTimeArr[index])} vertical="center" id="timestampCards">
-                            <Column flexGrow={1} horizontal='start' class="timestamp">{this.state.startTimeArr[index]}</Column>
+                            <Column flexGrow={1} horizontal='start' class="timestamp">{this.state.startTimeArr[index]} sec.</Column>
                             <Column flexGrow={1} horizontal='end' class="phrase">{this.state.searchStrings[i][1]}<b>{this.state.searchStrings[i][0]}</b>{this.state.searchStrings[i][2]}</Column>
                         </Row>
                         <hr />

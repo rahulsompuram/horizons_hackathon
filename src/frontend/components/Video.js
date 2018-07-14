@@ -1,7 +1,7 @@
 import React from 'react';
 import "video-react/dist/video-react.css";
 import { Player, BigPlayButton, seek } from 'video-react';
-import obamaMom from './obamaMom.mp4'
+import demi from './react-chat-code-along.mov'
 
 class Video extends React.Component {
     constructor(props) {
@@ -26,7 +26,7 @@ class Video extends React.Component {
             <Player
               ref='player'
               playsInline
-              src={obamaMom}
+              src={demi}
               id = "video"
             >
               <BigPlayButton position='center' />
