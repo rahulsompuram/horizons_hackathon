@@ -19,7 +19,7 @@ class SearchPage extends Component {
                 </Column>
                 <Column flexGrow={0.1} />
                 <Column flexGrow={1} id="search_column">
-                  <Row horizontal="start" id="search_box">
+                  {/* <Row horizontal="start" id="search_box"> */}
                     <Search id='search_input'
                       // loading={isLoading}
                       // onResultSelect={this.handleResultSelect}
@@ -28,18 +28,26 @@ class SearchPage extends Component {
                       // value={value}
                       // {...this.props}
                     />
-                  </Row>
-                  <hr />
-                  <Row horizontal="start" id="results_box">
-                    <ul>
-                      <li>
-                        Result1:
-                      </li>
-                      <li>
-                        Result2:
-                      </li>
-                    </ul>
-                  </Row>
+                  {/* </Row> */}
+                    <div class="ui inverted segment" id='inverted_segment'>
+                    <div class="ui inverted relaxed divided list" id='inverted_list'>
+                      <Row vertical="center" id="timestampCards">
+                          <Column flexGrow={1} horizontal='start' class="timestamp">0.1</Column>
+                          <Column flexGrow={1} horizontal='end' class="phrase">An excellent companion</Column>
+                      </Row>
+                      <hr />
+                      <Row vertical="center" id="timestampCards">
+                          <Column flexGrow={1} horizontal='start' class="timestamp">0.4</Column>
+                          <Column flexGrow={1} horizontal='end' class="phrase">An excellent companion</Column>
+                      </Row>
+                      <hr />
+                      <Row vertical="center" id="timestampCards">
+                          <Column flexGrow={1} horizontal='start' class="timestamp">0.6</Column>
+                          <Column flexGrow={1} horizontal='end' class="phrase">An excellent companion</Column>
+                      </Row>
+                      <hr />
+                    </div>
+                  </div>
                 </Column>
               </Row>
             </Column>
