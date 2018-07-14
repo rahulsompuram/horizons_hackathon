@@ -4,9 +4,12 @@
   "private": true,
   "proxy": "http://localhost:1337",
   "dependencies": {
+    "@google-cloud/speech": "^2.0.0",
+    "@grpc/proto-loader": "^0.3.0",
     "add": "^2.0.6",
     "body-parser": "^1.18.3",
     "express": "^4.16.3",
+    "ffmpeg": "0.0.4",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-scripts": "1.1.4",

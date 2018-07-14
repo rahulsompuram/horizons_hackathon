@@ -1,6 +1,6 @@
 import React from 'react';
 import "video-react/dist/video-react.css";
-import { Player } from 'video-react';
+import { Player, BigPlayButton } from 'video-react';
 
 class Video extends React.Component {
     constructor(props) {
@@ -19,7 +19,9 @@ class Video extends React.Component {
               poster="/assets/poster.png"
               src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4"
               id = "video"
-            />
+            >
+            <BigPlayButton position="center" />
+          </Player>
           </div>
         );
     }
