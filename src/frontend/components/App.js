@@ -1,6 +1,6 @@
 import React from 'react';
-import SearchPage from './SearchPage.js';
-//import HomePage from './HomePage.js';
+// import SearchPage from './SearchPage.js';
+import HomePage from './HomePage.js';
 import '../stylesheets/style.css';
 
 
@@ -12,7 +12,7 @@ class App extends React.Component {
     render() {
         return (
             <div>
-                <SearchPage />
+                <HomePage />
             </div>
         );
     }

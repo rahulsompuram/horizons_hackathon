@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Column, Row } from 'simple-flexbox';
+import { Search } from 'semantic-ui-react'
 
 class HomePage extends Component {
     render() {
@@ -11,7 +12,15 @@ class HomePage extends Component {
               </h1>
             </Row>
             <Row horizontal="center" vertical="center">
-              <input type="search" id="url_input" placeholder="Enter a search phrase..." />
+              {/* <input type="search" id="url_input" placeholder="Enter a search phrase..." /> */}
+              <Search
+                // loading={isLoading}
+                // onResultSelect={this.handleResultSelect}
+                // onSearchChange={_.debounce(this.handleSearchChange, 500, { leading: true })}
+                // results={results}
+                // value={value}
+                // {...this.props}
+              />
             </Row>
           </Column>
         );
