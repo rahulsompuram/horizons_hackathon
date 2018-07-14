@@ -80,3 +80,8 @@
 #inverted_segment {
   border: 1px solid white;
 }
+
+#results_header {
+  font-weight: bold;
+  font-size: 20px;
+}

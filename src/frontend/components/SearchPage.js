@@ -271,6 +271,15 @@ class SearchPage extends Component {
                     /> */}
                   {/* </Row> */}
                     <div class="ui inverted segment" id='inverted_segment'>
+                      <Row vertical='center' id='results_header'>
+                      <Column flexGrow={1} id='results_header_1' horizontal='start'>
+                        Time stamp
+                      </Column>
+                      <Column flexGrow={1} id='results_header_2' horizontal='end'>
+                        Phrase
+                      </Column>
+                    </Row>
+                    <hr />
                     <div class="ui inverted relaxed divided list" id='inverted_list'>
                       {this.state.searchResults.map((index, i) =>
                         (<div>
