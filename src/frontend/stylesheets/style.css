@@ -80,3 +80,8 @@
 #inverted_segment {
   border: 1px solid white;
 }
+
+#extend {
+  display: flex;
+  justify-content: center;
+}

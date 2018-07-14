@@ -4,6 +4,18 @@ import { Column, Row } from 'simple-flexbox';
 import { Search } from 'semantic-ui-react'
 
 class SearchPage extends Component {
+    state = {
+        seekTime: null,
+    };
+
+    setSeekTime(time) {
+      this.setState({seekTime: time});
+    }
+
+    clearSeekTime() {
+      this.setState({seekTime: null});
+    }
+
     render() {
         return (
           <body id="search_body">
@@ -15,12 +27,14 @@ class SearchPage extends Component {
               <br /><br />
               <Row horizontal="center" id="content_row">
                 <Column flexGrow={5} id="video_column">
-                  <Video />
+                  <Video seekTime={this.state.seekTime} clearSeekTime={() => this.clearSeekTime()}/>
                 </Column>
                 <Column flexGrow={0.1} />
                 <Column flexGrow={1} id="search_column">
-                  {/* <Row horizontal="start" id="search_box"> */}
+                  <Row id='extend'>
                     <Search id='search_input'
+                      size='medium'
+                      placeholder='Search for word or phrase...'
                       // loading={isLoading}
                       // onResultSelect={this.handleResultSelect}
                       // onSearchChange={_.debounce(this.handleSearchChange, 500, { leading: true })}
@@ -28,11 +42,11 @@ class SearchPage extends Component {
                       // value={value}
                       // {...this.props}
                     />
-                  {/* </Row> */}
+                  </Row>
                     <div class="ui inverted segment" id='inverted_segment'>
                     <div class="ui inverted relaxed divided list" id='inverted_list'>
-                      <Row vertical="center" id="timestampCards">
-                          <Column flexGrow={1} horizontal='start' class="timestamp">0.1</Column>
+                      <Row onClick={() => this.setSeekTime(10)} vertical="center" id="timestampCards">
+                          <Column flexGrow={1} horizontal='start' class="timestamp">10</Column>
                           <Column flexGrow={1} horizontal='end' class="phrase">An excellent companion</Column>
                       </Row>
                       <hr />

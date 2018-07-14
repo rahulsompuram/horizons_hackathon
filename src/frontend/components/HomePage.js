@@ -14,10 +14,9 @@ class HomePage extends Component {
             </Row>
             <br />
             <Row horizontal="center" vertical="start" id='url_row'>
-              {/* <input type="search" id="url_input" placeholder="Enter a search phrase..." /> */}
               <Form>
                 <Form.Field>
-                  <input placeholder='Enter url' id = 'search_bar' onKeyDown={(e) => e.keyCode === 13 ? this.props.handleClick() : null}/>
+                  <input placeholder='Enter a video url...' id = 'search_bar' onKeyDown={(e) => e.keyCode === 13 ? this.props.handleClick() : null}/>
                 </Form.Field>
               </Form>
             </Row>
