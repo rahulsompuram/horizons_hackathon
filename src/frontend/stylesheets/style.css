@@ -1,10 +1,11 @@
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro");
 @import url("https://fonts.googleapis.com/css?family=Amaranth");
 
+
 #home_header {
   font-family: 'Amaranth', sans-serif;
   font-size: 96px;
-  color: #1e3799;
+  color: white;
 }
 
 #url_input {
@@ -13,19 +14,38 @@
 }
 
 #title {
-  background-color: #1e3799;
+  display: flex;
+  align-items: center;
+  background: #0f2027; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #0f2027, #203a43, #1e3799); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #0f2027, #203a43, #1e3799); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  height: 100px;
 }
-
+#search_bar {
+  width: 500px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 25px;
+}
 #search_header {
   font-family: 'Amaranth', sans-serif;
   font-size: 48px;
   color: white;
 }
 
-body {
-  font-family: 'Source Sans Pro', sans-serif;
+#url_row {
+  height:600px;
 }
 
+#home_body {
+  font-family: 'Source Sans Pro', sans-serif;
+  background: #0f2027; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #0f2027, #203a43, #1e3799); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #0f2027, #203a43, #1e3799); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+#search_body {
+  background-color: white;
+}
 #content_row {
   padding-left: 100px;
   padding-right: 100px;
@@ -39,7 +59,8 @@ body {
 }
 
 #search_input {
-  width: 100%;
+  width: 500px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 #results_box {
@@ -47,4 +68,5 @@ body {
   padding: 5px;
   height: 100%;
   background-color: #e6e6e6;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }

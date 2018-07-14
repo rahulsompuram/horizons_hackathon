@@ -1,28 +1,28 @@
 import React, { Component } from 'react';
 import { Column, Row } from 'simple-flexbox';
-import { Search } from 'semantic-ui-react'
+import { Search, Form  } from 'semantic-ui-react'
 
 class HomePage extends Component {
     render() {
         return(
+          <body id="home_body">
           <Column flexGrow={1}>
             <Row horizontal="center" vertical="end" style={{height: '400px'}}>
               <h1 id="home_header">
                 VidSearch
               </h1>
             </Row>
-            <Row horizontal="center" vertical="center">
+            <br />
+            <Row horizontal="center" vertical="start" id='url_row'>
               {/* <input type="search" id="url_input" placeholder="Enter a search phrase..." /> */}
-              <Search
-                // loading={isLoading}
-                // onResultSelect={this.handleResultSelect}
-                // onSearchChange={_.debounce(this.handleSearchChange, 500, { leading: true })}
-                // results={results}
-                // value={value}
-                // {...this.props}
-              />
+              <Form>
+                <Form.Field>
+                  <input placeholder='Enter url' id = 'search_bar'/>
+                </Form.Field>
+              </Form>
             </Row>
           </Column>
+        </body>
         );
     }
 
