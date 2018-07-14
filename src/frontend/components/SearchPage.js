@@ -2,8 +2,18 @@ import React, {Component} from 'react';
 import Video from './Video.js';
 import { Column, Row } from 'simple-flexbox';
 import { Search } from 'semantic-ui-react'
+import longAudio from '../../backend/CloudApi/longAudio';
 
 class SearchPage extends Component {
+
+    async loadData() {
+      var obj = await longAudio();
+      this.setState({
+        //something
+      })
+    }
+
+
     render() {
         return (
           <body id="search_body">
