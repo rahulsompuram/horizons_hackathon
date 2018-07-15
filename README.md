@@ -1,6 +1,9 @@
 Possible next steps:
-- improve performance
+- improve performance for transcribing speed and converting to flac & 1 mono channel
 - allow users to edit transcript to improve accuracy
+- button/command that returns whole transcript and when you click on word, it takes you to timestamp in video source (i.e. onClick <text>)
+- limit transcript box to length of video screen and implement scrolling
+- rename to better explain value e.g. VideoScribe
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
